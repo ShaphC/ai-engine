@@ -62,11 +62,15 @@ export const openAIProvider: AIProvider = {
 
 
       if (!response.output_parsed) {
+        console.log(
+          "OpenAI raw response:",
+          JSON.stringify(response, null, 2)
+        );
+
         throw new AIProviderError(
           "OpenAI returned no structured output."
         );
       }
-
 
       return response.output_parsed;
 
