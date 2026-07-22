@@ -39,8 +39,8 @@ export async function processAI(
         input: request.input,
         schema: action.schema,
         model: action.model,
-        maxOutputTokens:
-          action.maxOutputTokens,
+        // maxOutputTokens:
+        //   action.maxOutputTokens,
       });
 
 

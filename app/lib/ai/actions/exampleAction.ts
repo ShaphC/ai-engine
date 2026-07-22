@@ -17,5 +17,5 @@ export const exampleAction: AIAction<ExampleOutput> = {
 
   schema: exampleSchema,
 
-  maxOutputTokens: 300,
+  // maxOutputTokens: 300,
 };

@@ -24,6 +24,7 @@ const openai = new OpenAI({
 const DEFAULT_MODEL =
   process.env.OPENAI_MODEL ?? "gpt-5";
 
+console.log("MODEL USED:", DEFAULT_MODEL);
 
 export const openAIProvider: AIProvider = {
   async generateStructuredOutput<T>(
@@ -32,7 +33,7 @@ export const openAIProvider: AIProvider = {
       input,
       schema,
       model = DEFAULT_MODEL,
-      maxOutputTokens = 1000,
+      // maxOutputTokens = 1000,
     }: GenerateStructuredOutputOptions<T>
   ): Promise<T> {
     try {
@@ -57,7 +58,7 @@ export const openAIProvider: AIProvider = {
           ),
         },
 
-        max_output_tokens: maxOutputTokens,
+        // max_output_tokens: maxOutputTokens,
       });
 
 
@@ -68,6 +69,7 @@ export const openAIProvider: AIProvider = {
         );
 
         throw new AIProviderError(
+          response.incomplete_details?.reason ??
           "OpenAI returned no structured output."
         );
       }

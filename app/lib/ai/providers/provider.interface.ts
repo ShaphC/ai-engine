@@ -6,7 +6,7 @@ export interface GenerateStructuredOutputOptions<T> {
   schema: ZodType<T>;
 
   model?: string;
-  maxOutputTokens?: number;
+  // maxOutputTokens?: number;
 }
 
 export interface AIProvider {

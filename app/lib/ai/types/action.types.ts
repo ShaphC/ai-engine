@@ -10,5 +10,5 @@ export interface AIAction<T = unknown> {
 
   model?: string;
 
-  maxOutputTokens?: number;
+  // maxOutputTokens?: number;
 }
