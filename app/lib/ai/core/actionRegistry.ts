@@ -1,13 +1,16 @@
 import type { AIAction } from "../types";
 
+import { voiceToNotesAction } from "../actions/voiceToNotes";
 import { exampleAction } from "../actions/exampleAction";
+
+import { InvalidActionError } from "./errors";
 
 
 const registry: Record<string, AIAction> = {
+  [exampleAction.name]: exampleAction,
 
-  [exampleAction.name]:
-    exampleAction,
-
+  [voiceToNotesAction.name]:
+    voiceToNotesAction,
 };
 
 
@@ -19,9 +22,7 @@ export function getAction(
 
 
   if (!action) {
-    throw new Error(
-      `Action "${name}" not found.`
-    );
+    throw new InvalidActionError(name);
   }
 
 

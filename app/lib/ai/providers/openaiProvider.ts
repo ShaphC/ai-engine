@@ -24,7 +24,7 @@ const openai = new OpenAI({
 const DEFAULT_MODEL =
   process.env.OPENAI_MODEL ?? "gpt-5";
 
-console.log("MODEL USED:", DEFAULT_MODEL);
+// console.log("MODEL USED:", DEFAULT_MODEL);
 
 export const openAIProvider: AIProvider = {
   async generateStructuredOutput<T>(
